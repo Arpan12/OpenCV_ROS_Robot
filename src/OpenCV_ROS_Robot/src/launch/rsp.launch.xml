@@ -1,0 +1,29 @@
+<!-- example.launch.xml -->
+
+<launch>
+
+  <!-- args that can be set from the command line or a default will be used
+  <arg name="background_r" default="0"/>
+  <arg name="background_g" default="255"/>
+  <arg name="background_b" default="0"/>
+  <arg name="chatter_ns" default="my/chatter/ns"/> -->
+
+  <!-- include another launch file -->
+  <!-- <include file="$(find-pkg-share demo_nodes_cpp)/launch/topics/talker_listener.launch.py"/> -->
+  <!-- include another launch file in the chatter_ns namespace-->
+  <!-- <group> -->
+    <!-- push-ros-namespace to set namespace of included nodes -->
+    <!-- <push-ros-namespace namespace="$(var chatter_ns)"/>
+    <include file="$(find-pkg-share demo_nodes_cpp)/launch/topics/talker_listener.launch.py"/>
+  </group> -->
+
+  <!-- start a turtlesim_node in the turtlesim1 namespace -->
+  <!-- <node pkg="turtlesim" exec="turtlesim_node" name="sim" namespace="turtlesim1"/> -->
+  <!-- start another turtlesim_node in the turtlesim2 namespace
+      and use args to set parameters -->
+  <node pkg="robot_state_publisher" exec="robot_state_publisher">
+    <param name="robot_description" value="$(var background_r)"/>
+  </node>
+  <!-- perform remap so both turtles listen to the same command topic -->
+  
+</launch>

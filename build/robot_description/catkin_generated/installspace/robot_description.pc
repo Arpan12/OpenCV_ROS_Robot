@@ -1,0 +1,8 @@
+prefix=/home/arpan/Projects/OpenCV_ROS_Robot_pkg/install
+
+Name: robot_description
+Description: Description of robot_description
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

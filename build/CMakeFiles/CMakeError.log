@@ -1,0 +1,55 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/arpan/Projects/OpenCV_ROS_Robot_pkg/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_ad7ff/fast"
+/usr/bin/make -f CMakeFiles/cmTC_ad7ff.dir/build.make CMakeFiles/cmTC_ad7ff.dir/build
+make[1]: Entering directory '/home/arpan/Projects/OpenCV_ROS_Robot_pkg/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ad7ff.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_ad7ff.dir/CheckSymbolExists.c.o   -c /home/arpan/Projects/OpenCV_ROS_Robot_pkg/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_ad7ff
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ad7ff.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_ad7ff.dir/CheckSymbolExists.c.o  -o cmTC_ad7ff 
+CMakeFiles/cmTC_ad7ff.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_ad7ff.dir/build.make:97: recipe for target 'cmTC_ad7ff' failed
+make[1]: *** [cmTC_ad7ff] Error 1
+make[1]: Leaving directory '/home/arpan/Projects/OpenCV_ROS_Robot_pkg/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_ad7ff/fast' failed
+make: *** [cmTC_ad7ff/fast] Error 2
+
+File /home/arpan/Projects/OpenCV_ROS_Robot_pkg/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/arpan/Projects/OpenCV_ROS_Robot_pkg/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_c7994/fast"
+/usr/bin/make -f CMakeFiles/cmTC_c7994.dir/build.make CMakeFiles/cmTC_c7994.dir/build
+make[1]: Entering directory '/home/arpan/Projects/OpenCV_ROS_Robot_pkg/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c7994.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_c7994.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_c7994
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c7994.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_c7994.dir/CheckFunctionExists.c.o  -o cmTC_c7994 -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_c7994.dir/build.make:97: recipe for target 'cmTC_c7994' failed
+make[1]: *** [cmTC_c7994] Error 1
+make[1]: Leaving directory '/home/arpan/Projects/OpenCV_ROS_Robot_pkg/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_c7994/fast' failed
+make: *** [cmTC_c7994/fast] Error 2
+
+
