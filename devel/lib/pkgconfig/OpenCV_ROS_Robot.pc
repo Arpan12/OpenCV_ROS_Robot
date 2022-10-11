@@ -1,8 +1,0 @@
-prefix=/home/arpan/Projects/OpenCV_ROS_Robot_pkg/devel
-
-Name: OpenCV_ROS_Robot
-Description: Description of OpenCV_ROS_Robot
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
